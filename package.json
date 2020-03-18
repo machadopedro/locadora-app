@@ -1,5 +1,5 @@
 {
-  "name": "locadora-app",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,10 +8,13 @@
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0",
+    "semantic-ui-react": "^0.88.2"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-api": "cd api && env/bin/flask run --no-debugger",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -30,5 +33,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:5000"
 }
