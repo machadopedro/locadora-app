@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/locadora-app/precache-manifest.134123d63994719d2d49f1940e758919.js"
+  "/locadora-app/precache-manifest.b15148097985cb386e0073af29a1959e.js"
 );
 
 self.addEventListener('message', (event) => {
