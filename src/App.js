@@ -3,7 +3,7 @@ import './App.css';
 import { NavLink, Switch, Route } from 'react-router-dom';
 import { List, Button, Form, Input, Checkbox} from 'semantic-ui-react';
 
-const backpath = 'https://4wordg1lp0.execute-api.us-east-1.amazonaws.com
+const backpath = 'https://4wordg1lp0.execute-api.us-east-1.amazonaws.com'
 
 function App() {
   const [user, setUser] = useState('guest');
