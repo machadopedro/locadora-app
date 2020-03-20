@@ -1,5 +1,6 @@
 {
-  "name": "portfolio",
+  "homepage": "http://machadopedro.github.io/locadora-app",
+  "name": "locadora-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,8 +14,9 @@
     "semantic-ui-react": "^0.88.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "start-api": "cd api && env/bin/flask run --no-debugger",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -34,5 +36,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
 }
