@@ -214,17 +214,6 @@ function Loan({user, car}) {
       'car_plate':car.plate,
 
     }
-    console.log(loan)
-    const response = await fetch(backpath+'/add_loan', {
-      method: 'post',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST,GET,PUT,DELETE',
-        'Access-Control-Allow-Headers': 'Authorization, Lang',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(loan)
-    })
     if (parkPass === 1) {
       await fetch(parkpasspath+'/activate_localiza_car', {
         method: 'post',
@@ -236,6 +225,18 @@ function Loan({user, car}) {
         },
         body: JSON.stringify(rentInfos)
       })
+    console.log(loan)
+    const response = await fetch(backpath+'/add_loan', {
+      method: 'post',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST,GET,PUT,DELETE',
+        'Access-Control-Allow-Headers': 'Authorization, Lang',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(loan)
+    })
+    
     }
     console.log(response)
   }
