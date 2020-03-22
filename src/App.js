@@ -196,7 +196,7 @@ function Loan({user, car}) {
   const [parkPass, setParkPass] = useState(0);
 
   async function handleClick(){
-    console.log(carInfos);
+
     const loan = {
       'cpf': user.cpf,
       'plate': car['plate'],
