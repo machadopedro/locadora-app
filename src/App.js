@@ -225,6 +225,7 @@ function Loan({user, car}) {
         },
         body: JSON.stringify(rentInfos)
       })
+    };
     console.log(loan)
     const response = await fetch(backpath+'/add_loan', {
       method: 'post',
@@ -235,11 +236,11 @@ function Loan({user, car}) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(loan)
-    })
-    console.log(response)
-    }
-    
+    });
+    console.log(response);
   }
+    
+  
   return(
     <div>
       <p>Aluguel</p>
