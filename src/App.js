@@ -236,9 +236,9 @@ function Loan({user, car}) {
       },
       body: JSON.stringify(loan)
     })
-    
-    }
     console.log(response)
+    }
+    
   }
   return(
     <div>
