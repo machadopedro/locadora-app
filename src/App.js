@@ -68,7 +68,7 @@ function Cars({setCar, cars}) {
               <div className='car-item'>
                 {car.model}
                 <NavLink className='button-alugar' to='/loan' car={car} onClick={()=>
-                  setCar(car.model)
+                  setCar(car)
                 
                 }>Alugar</NavLink>
               </div>
@@ -121,7 +121,7 @@ function Cadastro() {
 
   async function handleSignUp(){
     const client = {'name': name, 'cpf': cpf}
-    const response = await fetch(backpath+'/add_client', {
+    await fetch(backpath+'/add_client', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -193,21 +193,13 @@ function Login({setUser}) {
 
 function Loan({user, car}) {
   const [numeroDias, setNumeroDias] = useState(0);
-  const [carInfos, setCarInfos] = useState({});
   const [parkPass, setParkPass] = useState(0);
-
-  useEffect(() => {
-    fetch(backpath+'/available_cars/'+car).then(res => res.json()).then(data => {
-      console.log(data)
-      setCarInfos(data);
-    });
-  }, []);
 
   async function handleClick(){
     console.log(carInfos);
     const loan = {
-      'cpf': 124245,
-      'plate': carInfos['plate'],
+      'cpf': user.cpf,
+      'plate': car['plate'],
       'number_of_days': numeroDias,
       'park_pass': parkPass
     };
@@ -215,8 +207,8 @@ function Loan({user, car}) {
       'api_key': '(^9g&i(9phbq=xl-b@$l(zzck3-lruh9es2&w)2%^m-wi@p)zd',
       'client_name':user.name,
       'client_cpf':user.cpf,
-      'car_model':carInfos['model'],
-      'car_plate':carInfos['plate'],
+      'car_model':car['model'],
+      'car_plate':car['plate'],
 
     }
     console.log(loan)
@@ -302,7 +294,7 @@ function Contact() {
 }
 
 function Main({user, setUser}) {
-  const [car, setCar] = useState('Teste');
+  const [car, setCar] = useState({'plate': 'ABC12345', 'model': 'Example'});
 
   return (
     <Switch>
