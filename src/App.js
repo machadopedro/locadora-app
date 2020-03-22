@@ -191,7 +191,7 @@ function Login({setUser}) {
   )
 }
 
-function Loan({user, car}) {
+function Loan({user, car_model, car_plate}) {
   const [numeroDias, setNumeroDias] = useState(0);
   const [parkPass, setParkPass] = useState(0);
 
@@ -199,7 +199,7 @@ function Loan({user, car}) {
 
     const loan = {
       'cpf': user.cpf,
-      'plate': car['plate'],
+      'plate': car_plate,
       'number_of_days': numeroDias,
       'park_pass': parkPass
     };
@@ -207,8 +207,8 @@ function Loan({user, car}) {
       'api_key': '(^9g&i(9phbq=xl-b@$l(zzck3-lruh9es2&w)2%^m-wi@p)zd',
       'client_name':user.name,
       'client_cpf':user.cpf,
-      'car_model':car['model'],
-      'car_plate':car['plate'],
+      'car_model':car_model,
+      'car_plate':car_plate,
 
     }
     console.log(loan)
@@ -295,7 +295,7 @@ function Contact() {
 
 function Main({user, setUser}) {
   const [car, setCar] = useState({'plate': 'ABC12345', 'model': 'Example'});
-
+  
   return (
     <Switch>
       <Route exact path='/'>
@@ -308,7 +308,7 @@ function Main({user, setUser}) {
         <Contact />
       </Route>
       <Route exact path='/loan'>
-        <Loan user={user} car={car}/>
+        <Loan user={user} car_model={car.model} car_plate={car.plate}/>
       </Route>
       <Route exact path='/confirmed_loan'>
         <LoanConfirmed/>
