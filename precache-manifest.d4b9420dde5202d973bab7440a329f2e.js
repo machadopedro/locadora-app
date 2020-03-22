@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "60d8164a65f4c6263868fb475145f3e4",
+    "revision": "132b8e2e2ccdf0ae33c4c78f120f8440",
     "url": "/locadora-app/index.html"
   },
   {
-    "revision": "b163a365618ed74dc1da",
+    "revision": "7a3f9c974609ec2bcd5d",
     "url": "/locadora-app/static/css/main.79c14169.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/locadora-app/static/js/2.cb9fb274.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b163a365618ed74dc1da",
-    "url": "/locadora-app/static/js/main.5476115c.chunk.js"
+    "revision": "7a3f9c974609ec2bcd5d",
+    "url": "/locadora-app/static/js/main.ef5b648a.chunk.js"
   },
   {
     "revision": "586bbf6facaa839f4c2b",
