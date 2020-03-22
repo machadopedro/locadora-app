@@ -233,7 +233,7 @@ function Loan({user, car_model, car_plate}) {
   return(
     <div>
       <p>Aluguel</p>
-      {car}
+      {car_model}
       <br/>
       <Form>
         <Form.Field>
@@ -295,7 +295,7 @@ function Contact() {
 
 function Main({user, setUser}) {
   const [car, setCar] = useState({'plate': 'ABC12345', 'model': 'Example'});
-  
+
   return (
     <Switch>
       <Route exact path='/'>
