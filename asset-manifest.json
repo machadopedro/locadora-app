@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/locadora-app/static/css/main.79c14169.chunk.css",
-    "main.js": "/locadora-app/static/js/main.95ccc39c.chunk.js",
-    "main.js.map": "/locadora-app/static/js/main.95ccc39c.chunk.js.map",
+    "main.js": "/locadora-app/static/js/main.3f2e1aee.chunk.js",
+    "main.js.map": "/locadora-app/static/js/main.3f2e1aee.chunk.js.map",
     "runtime-main.js": "/locadora-app/static/js/runtime-main.fd2db313.js",
     "runtime-main.js.map": "/locadora-app/static/js/runtime-main.fd2db313.js.map",
     "static/js/2.14c8192b.chunk.js": "/locadora-app/static/js/2.14c8192b.chunk.js",
     "static/js/2.14c8192b.chunk.js.map": "/locadora-app/static/js/2.14c8192b.chunk.js.map",
     "index.html": "/locadora-app/index.html",
-    "precache-manifest.b15148097985cb386e0073af29a1959e.js": "/locadora-app/precache-manifest.b15148097985cb386e0073af29a1959e.js",
+    "precache-manifest.6a1f70d84c1e4756b09d4290a2dfc87b.js": "/locadora-app/precache-manifest.6a1f70d84c1e4756b09d4290a2dfc87b.js",
     "service-worker.js": "/locadora-app/service-worker.js",
     "static/css/main.79c14169.chunk.css.map": "/locadora-app/static/css/main.79c14169.chunk.css.map",
     "static/js/2.14c8192b.chunk.js.LICENSE.txt": "/locadora-app/static/js/2.14c8192b.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.fd2db313.js",
     "static/js/2.14c8192b.chunk.js",
     "static/css/main.79c14169.chunk.css",
-    "static/js/main.95ccc39c.chunk.js"
+    "static/js/main.3f2e1aee.chunk.js"
   ]
 }
