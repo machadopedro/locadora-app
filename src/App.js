@@ -13,7 +13,7 @@ function App() {
     <div className='app'>
       <h1>Locadora</h1>
       <Navigation user={user}/>
-      <Main setUser={setUser}/>
+      <Main user={user} setUser={setUser}/>
     </div>
   );
 }
@@ -301,7 +301,7 @@ function Contact() {
   );
 }
 
-function Main({setUser}) {
+function Main({user, setUser}) {
   const [car, setCar] = useState('Teste');
 
   return (
