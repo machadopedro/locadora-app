@@ -124,6 +124,9 @@ function Cadastro() {
     await fetch(backpath+'/add_client', {
       method: 'post',
       headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST,GET,PUT,DELETE',
+        'Access-Control-Allow-Headers': 'Authorization, Lang',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(client)
@@ -215,6 +218,9 @@ function Loan({user, car}) {
     const response = await fetch(backpath+'/add_loan', {
       method: 'post',
       headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST,GET,PUT,DELETE',
+        'Access-Control-Allow-Headers': 'Authorization, Lang',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(loan)
@@ -223,6 +229,9 @@ function Loan({user, car}) {
       await fetch(parkpasspath+'/activate_localiza_car', {
         method: 'post',
         headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST,GET,PUT,DELETE',
+          'Access-Control-Allow-Headers': 'Authorization, Lang',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(rentInfos)
