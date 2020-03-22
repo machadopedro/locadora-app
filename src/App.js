@@ -3,10 +3,11 @@ import './App.css';
 import { NavLink, Switch, Route } from 'react-router-dom';
 import { List, Button, Form, Input, Checkbox} from 'semantic-ui-react';
 
-const backpath = 'https://4wordg1lp0.execute-api.us-east-1.amazonaws.com'
+const backpath = 'https://4wordg1lp0.execute-api.us-east-1.amazonaws.com';
+const parkpasspath = 'http://52.224.12.242:80';
 
 function App() {
-  const [user, setUser] = useState('guest');
+  const [user, setUser] = useState({'name': 'guest', 'cpf': 123});
 
   return (
     <div className='app'>
@@ -25,7 +26,7 @@ function Navigation({user}) {
         <li><NavLink exact activeClassName="current" to='/'>Home</NavLink></li>
         <li><NavLink exact activeClassName="current" to='/about'>About</NavLink></li>
         <li><NavLink exact activeClassName="current" to='/contact'>Contact</NavLink></li>
-        <li className='user-item'><p className='user-name'>{user}</p></li>
+        <li className='user-item'><p className='user-name'>{user.name}</p></li>
       </ul>
     </nav>
   );
@@ -163,7 +164,7 @@ function Login({setUser}) {
     fetch(backpath+'/clients/'+cpf).then(res => res.json()).then(data => {
       console.log(data);
       if (data.ok){
-        setUser(data.name)
+        setUser({'name': data.name, 'cpf': data.cpf})
       }
     });
   }
@@ -209,6 +210,14 @@ function Loan({car}) {
       'plate': carInfos['plate'],
       'number_of_days': numeroDias,
       'park_pass': parkPass
+    };
+    const rentInfos = {
+      'api_key': '(^9g&i(9phbq=xl-b@$l(zzck3-lruh9es2&w)2%^m-wi@p)zd',
+      'client_name':user.name,
+      'client_cpf':user.cpf,
+      'car_model':carInfos['model'],
+      'car_plate':carInfos['plate'],
+
     }
     console.log(loan)
     const response = await fetch(backpath+'/add_loan', {
@@ -218,6 +227,15 @@ function Loan({car}) {
       },
       body: JSON.stringify(loan)
     })
+    if (parkPass === 1) {
+      await fetch(parkpasspath+'/activate_localiza_car', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(rentInfos)
+      })
+    }
     console.log(response)
   }
   return(
