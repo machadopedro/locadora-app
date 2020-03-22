@@ -191,7 +191,7 @@ function Login({setUser}) {
   )
 }
 
-function Loan({car}) {
+function Loan({user, car}) {
   const [numeroDias, setNumeroDias] = useState(0);
   const [carInfos, setCarInfos] = useState({});
   const [parkPass, setParkPass] = useState(0);
@@ -316,7 +316,7 @@ function Main({setUser}) {
         <Contact />
       </Route>
       <Route exact path='/loan'>
-        <Loan car={car}/>
+        <Loan user={user} car={car}/>
       </Route>
       <Route exact path='/confirmed_loan'>
         <LoanConfirmed/>
