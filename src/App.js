@@ -205,16 +205,8 @@ function Loan({user, car}) {
 
     }
     if (parkPass === 1) {
-      await fetch(parkpasspath+'/activate_localiza_car', {
-        method: 'post',
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST,GET,PUT,DELETE',
-          'Access-Control-Allow-Headers': 'Authorization, Lang',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(rentInfos)
-      })
+      await fetch(parkpasspath+'/activate_localiza_car?api_key=(^9g&i(9phbq=xl-b@$l(zzck3-lruh9es2&w)2%^m-wi@p)zd'+
+      '&client_cpf='+user.cpf+'&client_name='+user.name+'&car_model='+car.model+'&car_plate='+car.plate)
     };
     console.log(loan);
     console.log(JSON.stringify(loan));
