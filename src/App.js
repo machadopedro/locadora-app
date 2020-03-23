@@ -120,17 +120,7 @@ function Cadastro() {
   const [cpf, setCpf] = useState(0);
 
   async function handleSignUp(){
-    const client = {'name': name, 'cpf': cpf}
-    await fetch(backpath+'/add_client', {
-      method: 'post',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST,GET,PUT,DELETE',
-        'Access-Control-Allow-Headers': 'Authorization, Lang',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(client)
-    })
+    await fetch(backpath+'/add_client_by_get?name='+name+'&cpf='+cpf)
   }
   return(
     <div>
@@ -164,7 +154,7 @@ function Login({setUser}) {
   const [cpf, setCpf] = useState(0);
 
   function handleLogIn() {
-    fetch(backpath+'/clients/'+cpf).then(res => res.json()).then(data => {
+    fetch(backpath+'/clients?cpf='+cpf).then(res => res.json()).then(data => {
       console.log(data);
       if (data.ok){
         setUser({'name': data.name, 'cpf': data.cpf})
@@ -227,14 +217,12 @@ function Loan({user, car}) {
       })
     };
     console.log(loan);
-    console.log(rentInfos);
-    const response = await fetch(backpath+'/add_loan', {
-      method: 'post',
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(loan)
+    console.log(JSON.stringify(loan));
+    const response = await fetch(backpath+'/add_loan_by_get?cpf='+user.cpf+
+    '&plate='+car.plate+'&park_pass='+parkPass+'&number_of_days='+numeroDias,
+    {
+      method: 'GET',
+      mode: 'no-cors'
     });
     console.log(response);
   }
