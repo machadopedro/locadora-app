@@ -229,14 +229,14 @@ function Loan({user, car}) {
     console.log(loan);
     console.log(rentInfos);
     const response = await fetch(backpath+'/add_loan', {
-      method: 'post',
-      headers: {
+      'method': 'post',
+      'headers': {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'POST,GET,PUT,DELETE',
         'Access-Control-Allow-Headers': 'Authorization, Lang',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(loan)
+      'body': JSON.stringify(loan)
     });
     console.log(response);
   }
