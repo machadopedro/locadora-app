@@ -197,9 +197,14 @@ function Loan({user, car}) {
       'park_pass': parkPass
     };
     if (parkPass === 1) {
-      await fetch(parkpasspath+'/activate_localiza_car?api_key=9gi9phbqxlzzck3ruh9es2w2mwipzd'+
-      '&client_cpf='+user.cpf+'&client_name='+user.name+'&car_model='+car.model+'&car_plate='+car.plate)
-    };
+      try {
+        await fetch(parkpasspath+'/activate_localiza_car?api_key=9gi9phbqxlzzck3ruh9es2w2mwipzd'+
+        '&client_cpf='+user.cpf+'&client_name='+user.name+'&car_model='+car.model+'&car_plate='+car.plate)
+      }
+      catch (e) {
+        console.log('Park pass error')
+      }
+    }
     console.log(loan);
     console.log(JSON.stringify(loan));
     const response = await fetch(backpath+'/add_loan_by_get?cpf='+user.cpf+
