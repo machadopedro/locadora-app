@@ -226,7 +226,8 @@ function Loan({user, car}) {
         body: JSON.stringify(rentInfos)
       })
     };
-    console.log(loan)
+    console.log(loan);
+    console.log(rentInfos);
     const response = await fetch(backpath+'/add_loan', {
       method: 'post',
       headers: {
