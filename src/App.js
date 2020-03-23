@@ -4,7 +4,7 @@ import { NavLink, Switch, Route } from 'react-router-dom';
 import { List, Button, Form, Input, Checkbox} from 'semantic-ui-react';
 
 const backpath = 'https://4wordg1lp0.execute-api.us-east-1.amazonaws.com';
-const parkpasspath = 'http://54.224.12.242:80';
+const parkpasspath = 'https://ef41asg6e4.execute-api.us-east-1.amazonaws.com';
 
 function App() {
   const [user, setUser] = useState({'name': 'guest', 'cpf': 123});
@@ -196,16 +196,8 @@ function Loan({user, car}) {
       'number_of_days': numeroDias,
       'park_pass': parkPass
     };
-    const rentInfos = {
-      'api_key': '(^9g&i(9phbq=xl-b@$l(zzck3-lruh9es2&w)2%^m-wi@p)zd',
-      'client_name':user.name,
-      'client_cpf':user.cpf,
-      'car_model':car.model,
-      'car_plate':car.plate,
-
-    }
     if (parkPass === 1) {
-      await fetch(parkpasspath+'/activate_localiza_car?api_key=(^9g&i(9phbq=xl-b@$l(zzck3-lruh9es2&w)2%^m-wi@p)zd'+
+      await fetch(parkpasspath+'/activate_localiza_car?api_key=9gi9phbqxlzzck3ruh9es2w2mwipzd'+
       '&client_cpf='+user.cpf+'&client_name='+user.name+'&car_model='+car.model+'&car_plate='+car.plate)
     };
     console.log(loan);
