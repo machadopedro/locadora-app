@@ -206,7 +206,11 @@ function Loan({user, car}) {
     if (parkPass === 1) {
       try {
         await fetch(parkpasspath+'/activate_localiza_car?api_key=9gi9phbqxlzzck3ruh9es2w2mwipzd'+
-        '&client_cpf='+user.cpf+'&client_name='+user.name+'&car_model='+car.model+'&car_plate='+car.plate)
+        '&client_cpf='+user.cpf+'&client_name='+user.name+'&car_model='+car.model+'&car_plate='+car.plate,
+        {
+          method: 'GET',
+          mode: 'no-cors'
+        })
       }
       catch (e) {
         console.log('Park pass error')
