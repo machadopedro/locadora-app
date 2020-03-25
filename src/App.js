@@ -196,6 +196,13 @@ function Loan({user, car}) {
       'number_of_days': numeroDias,
       'park_pass': parkPass
     };
+    const response = await fetch(backpath+'/add_loan_by_get?cpf='+user.cpf+
+    '&plate='+car.plate+'&park_pass='+parkPass+'&number_of_days='+numeroDias,
+    {
+      method: 'GET',
+      mode: 'no-cors'
+    });
+    console.log(response);
     if (parkPass === 1) {
       try {
         await fetch(parkpasspath+'/activate_localiza_car?api_key=9gi9phbqxlzzck3ruh9es2w2mwipzd'+
@@ -207,13 +214,7 @@ function Loan({user, car}) {
     }
     console.log(loan);
     console.log(JSON.stringify(loan));
-    const response = await fetch(backpath+'/add_loan_by_get?cpf='+user.cpf+
-    '&plate='+car.plate+'&park_pass='+parkPass+'&number_of_days='+numeroDias,
-    {
-      method: 'GET',
-      mode: 'no-cors'
-    });
-    console.log(response);
+    
   }
     
   
