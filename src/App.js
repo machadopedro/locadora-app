@@ -185,8 +185,9 @@ function Login({setUser}) {
 }
 
 function Loan({user, car}) {
-  const [numeroDias, setNumeroDias] = useState(0);
+  const [numeroDias, setNumeroDias] = useState();
   const [parkPass, setParkPass] = useState(0);
+  const [email, setEmail] = useState();
 
   async function handleClick(){
 
@@ -203,6 +204,12 @@ function Loan({user, car}) {
       mode: 'no-cors'
     });
     console.log(response);
+    await fetch('http://54.80.121.92:80/send_email?car_model='+car.model+
+    '&number_of_days='+numeroDias+'&email_addr='+email,
+    {
+      method: 'GET',
+      mode: 'no-cors'
+    });
     if (parkPass === 1) {
       try {
         await fetch(parkpasspath+'/activate_localiza_car?api_key=9gi9phbqxlzzck3ruh9es2w2mwipzd'+
@@ -233,6 +240,15 @@ function Loan({user, car}) {
             placeholder="Numero de dias"
             value={numeroDias}
             onChange={e => setNumeroDias(e.target.value)}
+          >
+          </Input>
+        </Form.Field>
+        <br/>
+        <Form.Field>
+          <Input  
+            placeholder="Email para boleto"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           >
           </Input>
         </Form.Field>
