@@ -7,7 +7,7 @@ const backpath = 'https://4wordg1lp0.execute-api.us-east-1.amazonaws.com';
 const parkpasspath = 'https://ef41asg6e4.execute-api.us-east-1.amazonaws.com';
 
 function App() {
-  const [user, setUser] = useState({'name': 'guest', 'cpf': 123});
+  const [user, setUser] = useState({'name': 'Pedro Miguel', 'cpf': 70183656199});
 
   return (
     <div className='app'>
@@ -26,7 +26,7 @@ function Navigation({user}) {
         <li><NavLink exact activeClassName="current" to='/'>Home</NavLink></li>
         <li><NavLink exact activeClassName="current" to='/about'>About</NavLink></li>
         <li><NavLink exact activeClassName="current" to='/contact'>Contact</NavLink></li>
-        <li className='user-item'><p className='user-name'>{user.name}</p></li>
+        <li className='user-item'><p className='user-name'>guest</p></li>
       </ul>
     </nav>
   );
@@ -279,7 +279,6 @@ function About(){
 
   return (
     <div className='about'>
-      <h1>Sobre</h1>
       <p>Somos uma empresa de aluguel de carros</p>
     </div>
   );
@@ -289,7 +288,6 @@ function About(){
 function Contact() {
   return (
     <div className='contact'>
-      <h1>Contato Me</h1>
       <p>Email para contato: <strong>locadora.parkpass@gmail.com</strong></p>
     </div>
   );
