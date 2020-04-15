@@ -279,9 +279,8 @@ function About(){
 
   return (
     <div className='about'>
-      <h1>About Me</h1>
-      <p>Ipsum dolor dolorem consectetur est velit fugiat. Dolorem provident corporis fuga saepe distinctio ipsam? Et quos harum excepturi dolorum molestias?</p>
-      <p>Ipsum dolor dolorem consectetur est velit fugiat. Dolorem provident corporis fuga saepe distinctio ipsam? Et quos harum excepturi dolorum molestias?</p>
+      <h1>Sobre</h1>
+      <p>Somos uma empresa de aluguel de carros</p>
     </div>
   );
 
@@ -290,8 +289,8 @@ function About(){
 function Contact() {
   return (
     <div className='contact'>
-      <h1>Contact Me</h1>
-      <p>You can reach me via email: <strong>hello@example.com</strong></p>
+      <h1>Contato Me</h1>
+      <p>Email para contato: <strong>locadora.parkpass@gmail.com</strong></p>
     </div>
   );
 }
