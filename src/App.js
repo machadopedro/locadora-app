@@ -198,18 +198,13 @@ function Loan({user, car}) {
       'park_pass': parkPass
     };
     const response = await fetch(backpath+'/add_loan_by_get?cpf='+user.cpf+
-    '&plate='+car.plate+'&park_pass='+parkPass+'&number_of_days='+numeroDias,
+    '&plate='+car.plate+'&park_pass='+parkPass+'&number_of_days='+numeroDias+
+    '&email_addr='+email+'&car_model='+car.model,
     {
       method: 'GET',
       mode: 'no-cors'
     });
     console.log(response);
-    await fetch('http://54.80.121.92:80/send_email?car_model='+car.model+
-    '&number_of_days='+numeroDias+'&email_addr='+email,
-    {
-      method: 'GET',
-      mode: 'no-cors'
-    });
     if (parkPass === 1) {
       try {
         await fetch(parkpasspath+'/activate_localiza_car?api_key=9gi9phbqxlzzck3ruh9es2w2mwipzd'+
